@@ -1,0 +1,310 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+.AboutUs {
+
+    &__header {
+        background: url('../../assets/images/about-hero-bg.png') no-repeat center;
+        background-size: cover;
+        width: 100%;
+        height: 345px;
+        min-height: 345px;
+    }
+    .AboutUs__header-container {
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .AboutUs__header--bg {
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, .53);
+    }
+    &__text {
+        font-family: 'JennaSue';
+        font-size: 48px;
+        font-weight: 400;
+        line-height: 48px;
+        padding-top: 4.5rem;
+        color: $white;
+        text-align: center;
+    }
+    &__text-header {
+      position: relative;
+        color: $white;
+        margin-top: 20px;
+        font-family: 'GorditasBold';
+        font-size: 64px;
+        line-height: 110.5%;
+        text-align: center;
+        z-index: 1;
+        @include respond(tab-port) {
+            font-size: 45px;
+        }
+
+        @include respond(tab-land) {
+            font-size: 45px;
+        }
+
+    }
+    &__text-header::after {
+      content: "";
+      position: absolute;
+      top: 65%;
+      width: 62%;
+      height: 30px;
+      background: $red;
+      z-index: -1;
+      left: 19%;
+      @include respond(tab-port) {
+          width: 83%;
+          top: 75%;
+          left: 9%;
+      }
+    }
+
+    &__mission {
+        background: url('../../assets/images/cta.png') no-repeat center;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        padding: 7rem 20px 4rem 7rem;
+      @include respond(tab-land) {
+        display: block;
+        padding: 5.5rem 20px 4rem;
+        &--text {
+          padding-bottom: 1.5rem;
+        }
+      }
+      @include respond(tab-port) {
+        padding: 3.5rem 20px 4rem;
+      }
+        &--image {
+          width: 50%;
+          max-width: 500px;
+          margin-right: 4rem;
+          @include respond(tab-land){
+            width: 100%;
+            max-width: unset;
+            text-align: center;
+          }
+          img {
+            width: 90%;
+            box-shadow: 10px 12px 0px 1px rgba($red, 0.75);
+            -webkit-box-shadow: 10px 12px 0px 1px rgba($red, 0.75);
+            -moz-box-shadow: 10px 12px 0px 1px rgba($red, 0.75);
+           @include respond(tab-land){
+             margin: 0 auto 2rem;
+             width: 100%;
+             max-width: 400px;
+           }
+          }
+        }
+
+          &--wrap {
+              max-width: 50%;
+            @include respond(tab-land){
+              width: 100%;
+              max-width: unset;
+            }
+          }
+          &--wraptt {
+            padding: 30px;
+          }
+          &--wraptt:hover {
+            background: $red;
+            color: $white;
+            padding: 30px;
+            p {
+              color: $white;
+            }
+          }
+
+        &--header{
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 34px;
+            color: #EC100C;
+            text-align: left;
+            margin-top: 2rem;
+        }
+        &--text {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 235%;
+            color: $black;
+            text-align: left;
+            padding-right: 1rem;
+        }
+       
+    }
+
+    &__meet {
+        width: 100%;
+        // min-height: 645px;
+        // max-height: 645px;
+        background: $red url(../../assets/images/cta.png) no-repeat cover;
+        //background: url(../../assets/images/pastor.jpg) no-repeat right center;
+        background-size: 450px 350px;
+        background-color: $red;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        @include respond(tab-port) {
+            flex-wrap: wrap;
+        }
+
+        &--wrap {
+            //max-width: 500px;
+        }
+
+        &--image img {
+            width: 550px;
+            height: 600px;
+        }
+
+        &--header {
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 68px;
+            color: $white;
+            text-align: left;
+            padding-top: 4rem;
+            padding-bottom: 1rem;
+            padding-left: 50px;
+        }
+        &--text {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 58px;
+            color: $white;
+            text-align: left;
+            //padding-left: 50px;
+        }
+        &--social--text{
+            font-style: italic;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: $white;
+            //padding-left: 50px;
+            padding-top: 66px;
+            padding-bottom: 13px;
+          @include respond(tab-land){
+            padding-top: 44px;
+          }
+          @include respond(tab-land){
+            padding-top: 22px;
+          }
+        }
+
+        &--social--link{
+          color: $white;
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: flex-start;
+          align-items: center;
+        }
+        &--social--wrap {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+          .group {
+            margin-right: 20px;
+            padding-bottom: 48px;;
+            &-img {
+              margin-right: 5px;
+            }
+          }
+        }
+    }
+
+    .pastor {
+      display: flex;
+      align-content: center;
+      //background: $red;
+      background: $red url('../../assets/images/cta.png');
+      padding: 62px 0px 0px 114px;
+      overflow: hidden;
+      @include respond(desktop) {
+        padding: 62px 30px 62px;
+      }
+      @include respond(tab-land) {
+        display: block;
+      }
+      @include respond(tab-port) {
+        padding: 62px 10px 62px;
+      }
+
+      &__image {
+        text-align: right;
+        // width: 40%;
+        order: 2;
+        margin-left: 36px;
+        display: flex;
+        align-items: flex-end;
+        @include respond(tab-land) {
+          padding-left: 0;
+          width: 100%;
+          text-align: center;
+        }
+        @include respond(tab-land) {
+          margin-left: 0px;
+        }
+
+        &--img {
+          // max-height: 700px;
+          // height: 100%;
+          width: auto;
+          overflow: hidden;
+          @include respond(tab-land) {
+            max-height: unset;
+            max-width: 500px;
+            width: 100%;
+          }
+        }
+      }
+
+      &__text {
+        margin-right: 36px;
+        margin-top: 60px;
+        vertical-align: middle;
+        width: 60%;
+        @include respond(tab-land) {
+          margin-right: 0;
+          padding-top: 0;
+          width: 100%;
+          padding-bottom: 60px;
+          padding-bottom: 60px;
+        }
+
+        &--head {
+          color: $white;
+          font-family: GorditasBold;
+          font-size: 48px;
+          line-height: 62px;
+          margin-bottom: 30px;
+          @include respond(tab-port) {
+            font-size: 36px;
+            line-height: 47px;
+          }
+        }
+
+        &--text {
+          font-family: Gorditas400;
+          color: $white;
+          font-size: 20px;
+          line-height: 58px;
+          margin-bottom: 30px;
+          @include respond(tab-port) {
+            font-size: 15px;
+            line-height: 44px;
+          }
+        }
+      }
+    }
+
+}

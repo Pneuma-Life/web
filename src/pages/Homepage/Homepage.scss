@@ -1,0 +1,921 @@
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/variables";
+@import '~react-responsive-carousel/lib/styles/carousel.min.css';
+
+.homepage {
+  .hero {
+    background: url('../../assets/images/hero.gif') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: calc(100vh - 105px);
+    min-height: 700px;
+    position: relative;
+
+    &__bg {
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, .74);
+
+      &--video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+      }
+      &--overlay {
+        //position: absolute;
+        //top: 0;
+        //left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .74);
+      }
+    }
+
+    &__main {
+      color: white;
+      position: relative;
+      height: 100%;
+      width: 100%;
+      padding-left: 101px;
+      @include respond(tab-land) {
+        padding-left: 50px;
+      }
+      @include respond(tab-port) {
+        padding-left: 20px;
+      }
+
+      &--text {
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+        color: white;
+        &-welcome {
+          font-family: JennaSue;
+          font-size: 36px;
+          line-height: 36px;
+          font-weight: 400;
+          margin-bottom: 5px;
+          @include respond(tab-port) {
+            font-size: 48px;
+            line-height: 48px;
+          }
+        }
+
+        &-main {
+          position: relative;
+          font-size: 48px;
+          line-height: 60px;
+          font-family: GorditasBold;
+          margin-bottom: 28px;
+          z-index: 1;
+          span::after {
+            content: "";
+            position: absolute;
+            top: 35%;
+            width: 70%;
+            height: 18px;
+            background: $red;
+            z-index: -1;
+            left: 0;
+            @include respond(tab-port) {
+              width: 100%;
+            }
+          }
+          @include respond(tab-port) {
+            font-size: 36px;
+            line-height: 45px;
+          }
+        }
+      }
+
+      &--btn {
+        display: flex;
+
+        &:not(:last-child) {
+          margin-right: 15px;
+        }
+
+        @include respond(tab-port) {
+          margin: 0;
+          display: block;
+          .btn-second {
+            margin-top: 20px;
+          }
+          &:not(:last-child) {
+            padding-top: 15px;
+          }
+        }
+      }
+    }
+
+
+    &__activities {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      width: 80%;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, rgba(255, 8, 68, 0.2) 0%, rgba(255, 177, 153, 0.2) 100%);
+      padding: 27px 47px;
+      font-family: Gorditas;
+      @include respond(tab-land) {
+        width: 90%;
+      }
+
+      &--text {
+        margin-top: 20px;
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+        @include respond(tab-port) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .welcome {
+    display: flex;
+    align-content: center;
+    background: url("../../assets/images/welcome_bg_top_left.png") left top no-repeat, url("../../assets/images/welcome_bg_top_right.png") right top no-repeat;
+    padding: 62px 114px;
+    @include respond(desktop) {
+      padding: 62px 57px;
+    }
+    @include respond(tab-land) {
+      display: block;
+    }
+    @include respond(tab-port) {
+      padding: 62px 20px;
+    }
+
+    &__image {
+      margin-right: 36px;
+      width: 50%;
+      margin-left: 10px;
+      margin-top: 60px;
+      //min-width: 50%;
+      @include respond(tab-land) {
+        margin-right: 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      &--img {
+        border-radius: 5px;
+         //width: 574px;
+         width: 100%;
+        //height: 100%;
+        max-width: 575px;
+        overflow: hidden;
+        @include respond(tab-land) {
+          max-width: 375px;
+        }
+      }
+    }
+
+    &__text {
+      margin-left: 36px;
+      margin-top: 60px;
+      order: 2;
+      vertical-align: middle;
+      width: 50%;
+      @include respond(tab-land) {
+        margin-left: 0;
+        margin-top: 0;
+        width: 100%;
+        margin-bottom: 60px;
+      }
+
+      &--head {
+        font-family: GorditasBold;
+        color: $red;
+        font-size: 42px;
+        line-height: 110%;
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 1;
+        span::after {
+          content: "";
+          position: absolute;
+          top: 37%;
+          width: 62%;
+          height: 30px;
+          background:#C9C9C9;
+          z-index: -1;
+          left: 0;
+          @include respond(tab-land){
+            width: 53%;
+          }
+          @include respond(tab-port){
+              width: 70%;
+              height: 25px;
+              top: 25%;
+          }
+        }
+        @include respond(tab-port) {
+          font-size: 36px;
+        }
+      }
+
+      &--text {
+        font-family: Gorditas400;
+        color: $black;
+        font-size: 20px;
+        line-height: 230%;
+        margin-bottom: 30px;
+        @include respond(tab-port) {
+          font-size: 15px;
+        }
+      }
+    }
+
+    .text-btn {
+      color: $red;
+      padding: 0;
+
+      span {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .pastor {
+    display: flex;
+    align-content: center;
+    background: #C9C9C9;
+    overflow: hidden;
+    @include respond(tab-land) {
+      display: block;
+      padding: 62px 57px;
+    }
+    @include respond(tab-port) {
+      padding: 62px 10px;
+    }
+
+    &__image {
+      text-align: right;
+      margin-left: 36px;
+      width: 40%;
+      order: 2;
+      display: flex;
+      align-items: flex-end;
+      @include respond(tab-land) {
+        margin-left: 0;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &--img {
+        max-height: 700px;
+        width: auto;
+        overflow: hidden;
+        @include respond(tab-land) {
+          max-height: 440px;
+          max-width: 100%;
+        }
+      }
+    }
+
+    &__text {
+      margin-right: 36px;
+      margin-top: 60px;
+      vertical-align: middle;
+      width: 60%;
+      padding: 62px 0  62px 126px;
+      @include respond(desktop) {
+        padding: 62px 0  62px 57px;
+      }
+      @include respond(tab-land) {
+        padding: 0;
+        margin-right: 0;
+        width: 100%;
+      }
+
+      &--head {
+        color: $black;
+        font-family: GorditasBold;
+        font-size: 48px;
+        line-height: 62px;
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 1;
+        span::after {
+          content: "";
+          position: absolute;
+          top: 27%;
+          width: 32%;
+          height: 30px;
+          background: $red;
+          z-index: -1;
+          left: 0;
+          @include respond(tab-land){
+            width: 50%;
+            top: 27%;
+            height: 20px;
+          }
+          @include respond(tab-port) {
+            width: 50%;
+            height: 22px;
+            top: 23%;
+          }
+        }
+        
+        @include respond(tab-port) {
+          font-size: 32px;
+          line-height: 34px;
+        }
+      }
+
+      &--text {
+        font-family: Gorditas400;
+        color: $black;
+        font-size: 20px;
+        line-height: 58px;
+        margin-bottom: 30px;
+        @include respond(tab-port) {
+          font-size: 15px;
+          line-height: 38px;
+        }
+      }
+    }
+
+    .text-btn {
+      color: $red;
+      padding: 0;
+
+      span {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .sermon {
+    padding: 62px 50px;
+    text-align: center;
+    @include respond(desktop) {
+      padding: 62px 25px;
+    }
+    @include respond(desktop) {
+      padding: 62px 10px;
+    }
+
+    &__head {
+      color: $black;
+      font-family: GorditasBold;
+      font-size: 48px;
+      line-height: 53px;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 1;
+      span::after {
+        content: "";
+        position: absolute;
+        top: 53%;
+        width: 23%;
+        height: 30px;
+        background:#C9C9C9;
+        z-index: -1;
+        left: 39%;
+        @include respond(tab-land){
+          width: 53%;
+          left: 25%;
+        }
+        @include respond(tab-port){
+            width: 80%;
+            height: 25px;
+            top: 50%;
+            left: 10%;
+        }
+      }
+      @include respond(tab-land) {
+        font-size: 36px;
+        line-height: 55px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &__text {
+      color: $black;
+      font-family: Gorditas400;
+      font-size: 16px;
+      line-height: 23px;
+      margin-bottom: 60px;
+      @include respond(tab-land) {
+        margin-bottom: 40px;
+      }
+    }
+
+    &__cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    // &__card:hover {
+    //   cursor: pointer;
+    //   transition-property: all;
+    //   transition-duration: 0.4s;
+    //   transition-timing-function: ease;
+    //   transition-delay: 0s;
+    //   box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.49);
+    // }
+
+
+    &__card {
+      width: 100%;
+      //height: 369px;
+      //min-width: 380px;
+      max-width: 380px;
+      //min-height: 396px;
+      margin: 20px 10px;
+      border: 1px solid #1E1E1E;
+      border-radius: 5px;
+      position: relative;
+
+      &:hover {
+        .sermon__card--btn {
+          display: flex;
+          animation: fromBottomUp 0.5s ease-out;
+        }
+      }
+
+      &--image {
+        max-height: 242px;
+        overflow: hidden;
+
+        &-img {
+          width: 100%;
+        }
+      }
+
+      &--text {
+        padding: 30px;
+        text-align: left;
+
+        &-title {
+          color: $black;
+          font-family: Gorditas;
+          font-size: 24px;
+          line-height: 34px;
+          margin-bottom: 13px;
+        }
+
+        &-author {
+          color: $red;
+          font-style: italic;
+          font-family: Gorditas400;
+          font-size: 16px;
+          line-height: 23px;
+        }
+      }
+
+      &--btn {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        justify-content: space-evenly;
+        width: 100%;
+        background-color: $red;
+        color: white;
+        border-radius: 0px 0px 5px 5px;
+        display: none;
+        @media (pointer:coarse) {
+          display: flex;
+          position: relative;
+        }
+        .btn {
+          padding: 24px  30px;
+          &:hover {
+            box-shadow: none;
+            transform: translate(0, 0);
+          }
+
+        }
+      }
+
+
+    }
+
+    &__view-more {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      .btn {
+        display: flex;
+      }
+    }
+  }
+
+  .values {
+    padding: 90px 20px;
+    text-align: center;
+    background: url('../../assets/images/values_bg.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include respond(tab-port) {
+      padding: 45px 10px;
+    }
+
+    &__head {
+      color: $white;
+      font-family: GorditasBold;
+      font-size: 48px;
+      line-height: 53px;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 1;
+      span::after {
+        content: "";
+        position: absolute;
+        top: 53%;
+        width: 23%;
+        height: 30px;
+        background: $red;
+        z-index: -1;
+        left: 39%;
+        @include respond(tab-land){
+          width: 60%;
+          left: 21%;
+          top: 50%;
+        }
+        @include respond(tab-port){
+            width: 80%;
+            height: 25px;
+            top: 50%;
+            left: 10%;
+        }
+      }
+      @include respond(tab-port){
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &__text {
+      color: $white;
+      font-family: Gorditas400;
+      font-size: 16px;
+      line-height: 23px;
+      margin-bottom: 50px;
+      @include respond(tab-port){
+        margin-bottom: 25px;
+      }
+    }
+
+    &__cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    &__card {
+      width: 100%;
+      height: 389px;
+      max-width: 380px;
+      margin: 10px 10px;
+      border: 1px solid #1E1E1E;
+      border-radius: 5px;
+      background: #1E1E1E;
+      color: $white;
+      padding: 40px 30px;
+      @include respond(tab-port) {
+        margin: 10px 0;
+        padding: 10px 15px;
+      }
+
+      &--image {
+        text-align: center;
+        margin-bottom: 48px;
+
+        &-img {
+        }
+      }
+
+      &--text {
+        color: $white;
+        font-family: Gorditas400;
+        font-size: 16px;
+        line-height: 40px;
+        margin-bottom: 40px;
+        @include respond(tab-port) {
+          margin-bottom: 20px;
+          //font-size: 12px;
+          //line-height: 30px;
+        }
+      }
+        &--alt {
+          background-color: unset;
+          //padding: 10px;
+          border: 1px solid #FF8177;
+
+          .btn {
+            background-color: white;
+            color: $red;
+          }
+        }
+      }
+
+    }
+
+  .praise {
+    padding: 80px 20px 200px;
+    color: $black;
+    text-align: center;
+    background: url("../../assets/images/testimonial-left.png") left bottom no-repeat, url("../../assets/images/testimonial-right.png") right bottom no-repeat;
+    @include respond(tab-port){
+      padding: 80px 0 200px;
+    }
+    &__head {
+      font-family: GorditasBold;
+      font-size: 48px;
+      line-height: 53px;
+      margin-bottom: 58px;
+      position: relative;
+      z-index: 1;
+      span::after {
+        content: "";
+        position: absolute;
+        top: 53%;
+        width: 19%;
+        height: 30px;
+        background:#C9C9C9;
+        z-index: -1;
+        left: 41%;
+        @include respond(tab-land){
+          width: 40%;
+          left: 30%;
+        }
+        @include respond(tab-port){
+            width: 67%;
+            height: 25px;
+            top: 50%;
+            left: 18%;
+        }
+      }
+      @include respond(tab-land){
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 40px;
+      }
+    }
+
+    &__text {
+      width: 80%;
+      margin: 0 auto;
+
+      &--head {
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: 6px;
+      }
+
+      &--text {
+        font-family: Gorditas400;
+        font-size: 16px;
+        line-height: 40px;
+        margin-bottom: 43px;
+      }
+    }
+
+    &__demarcator {
+      width: 40%;
+      border-top: 3px solid $red;
+      margin: 0 auto 29px;
+    }
+
+    &__author {
+      font-size: 24px;
+      line-height: 34px;
+      margin: 8px 0;
+    }
+
+    &__share {
+      margin-top: 27px;
+    }
+
+    &__item {
+      padding-bottom: 50px;
+
+    }
+
+    .carousel .control-dots .dot {
+      background-color: $red;
+    }
+  }
+
+  .devotional {
+    background: url("../../assets/images/devotional_bg.png") no-repeat center center;
+    background-size: cover;
+    padding: 200px 50px 150px;
+    text-align: center;
+    @include respond(tab-port){
+      padding: 100px 20px 75px;
+    }
+    &__head {
+      font-family: GorditasBold;
+      font-size: 48px;
+      line-height: 68px;
+      margin-bottom: 12px;
+      @include respond(tab-land){
+        font-size: 36px;
+        line-height: 51px;
+        margin-bottom: 9px;
+      }
+    }
+
+    &__text {
+      font-family: Gorditas400;
+      font-size: 16px;
+      line-height: 23px;
+      color: rgba(0, 0, 0, 0.58);
+      margin-bottom: 56px;
+      @include respond(tab-land){
+        margin-bottom: 40px;
+      }
+    }
+
+    &__button {
+      .icon-btn {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .upcoming {
+    padding: 62px 65px 0;
+    color: $white;
+    text-align: center;
+    background: url("../../assets/images/event-bg.png") no-repeat center center;
+    background-size: cover;
+    @include respond(tab-land){
+      padding: 62px 20px 0;
+    }
+    @include respond(tab-port){
+      padding: 62px 5px 0;
+    }
+    &__head {
+      font-family: GorditasBold;
+      font-size: 48px;
+      line-height: 68px;
+      margin-bottom: 63px;
+      position: relative;
+      z-index: 1;
+      span::after {
+        content: "";
+        position: absolute;
+        top: 53%;
+        width: 27%;
+        height: 30px;
+        background: $red;
+        z-index: -1;
+        left: 37%;
+        @include respond(tab-land){
+          width: 53%;
+          left: 25%;
+        }
+        @include respond(tab-port){
+            width: 80%;
+            height: 25px;
+            top: 50%;
+            left: 10%;
+        }
+      }
+      @include respond(tab-land){
+        font-size: 36px;
+        line-height: 51px;
+        margin-bottom: 47px;
+      }
+    }
+
+    .event {
+      padding-bottom: 70px;
+      width: 80%;
+      max-width: 800px;
+      margin: 0 auto;
+      @include respond(tab-land){
+        width: 90%;
+      }
+      &__title {
+        font-family: Gorditas;
+        font-size: 40px;
+        line-height: 57px;
+        margin-bottom: 21px;
+
+        @include respond(tab-land){
+          font-size: 30px;
+          line-height: 40px;
+          margin-bottom: 10.5px;
+
+        }
+      }
+
+      &__description {
+        color: #D9D9D9D9;
+        font-family: Gorditas400;
+        font-size: 24px;
+        line-height: 34px;
+        margin-bottom: 6px;
+
+        @include respond(tab-land){
+          font-size: 18px;
+          line-height: 24px;
+        }
+      }
+
+      &__countdown {
+        color: $red;
+        font-family: GorditasBold;
+        font-size: 48px;
+        line-height: 68px;
+        margin: 30px 0;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        @include respond(tab-land){
+          font-size: 36px;
+          line-height: 51px;
+        }
+        &--group {
+          &:not(:last-child) {
+            margin-right: 30px;
+            @include respond(tab-land){
+              margin-right: 21px;
+            }
+            @include respond(tab-port){
+              margin-right: 14px;
+            }
+          }
+
+          &-number {
+            color: #FF867A;
+            font-family: GorditasBold;
+            font-size: 64px;
+            line-height: 91px;
+            @include respond(tab-land){
+              font-size: 46px;
+              line-height: 68px;
+            }
+            @include respond(tab-land){
+              font-size: 36px;
+              line-height: 50px;
+            }
+          }
+
+          &-text {
+            color: $white;
+            font-family: Gorditas;
+            font-size: 16px;
+            line-height: 22px;
+            margin-top: 11px;
+          }
+        }
+      }
+
+      &__button {
+        margin-top: 50px;
+        text-align: center;
+
+        .btn {
+          @include respond(tab-port){
+           display: block;
+            margin: 0 auto;
+          }
+          &:not(:last-child){
+            margin-right: 20px;
+            @include respond(tab-port){
+              margin: 0 auto 20px;
+            }
+          }
+        }
+        .btn-white {
+          color: $white;
+          background: none;
+          border: 1px solid $white;
+
+        }
+      }
+    }
+
+    .carousel .control-dots .dot {
+      background-color: $red;
+    }
+  }
+
+
+}
+
+.iframe-video {
+    width: 100%;
+    height: 100vh;
+    max-height: 80vh; 
+    @include respond(tab-port) {
+        height: 35vh;
+        width: 100%;
+    }
+}

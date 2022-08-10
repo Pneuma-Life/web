@@ -1,0 +1,122 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+.footer {
+  position: relative;
+   &__top{
+     position: absolute;
+     top: 30px;
+     left: 10%;
+     width: 80%;
+     margin: 0 auto;
+     border-top: 1px solid $red;
+   }
+  .pre-footer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 70px 50px 40px;
+    flex-wrap: wrap;
+    @include respond(tab-land){
+      padding: 70px 25px 40px;
+    }
+    @include respond(tab-port){
+      padding: 70px 10px 40px;
+    }
+  }
+//   .post-footer {
+//     background-color: $red;
+//     color: $white;
+//     text-align: center;
+//     padding: 30px 0;
+//     font-size: 14px;
+//     line-height: 28px;
+//     font-family: Gorditas;
+//     .post-footer__text {
+//       width: 80%;
+//       margin: 0 auto;
+//     }
+//   }
+  &__group--head {
+    padding-bottom: 15px;
+    font-size: 18px;
+    line-height: 26px;
+    font-family: 'Gorditas';
+    color: #000;
+    margin-bottom: 24px;
+  }
+  &__contact {
+    width: 275px;
+    max-width: 275px;
+    margin: 20px 10px;
+    order: 2;
+    &--address {
+      padding-bottom: 18px;
+      font-size: 16px;
+      line-height: 23px;
+      font-family: 'Gorditas400';
+      color: rgba(0,0,0,0.63);
+    }
+    &--link {
+      padding-bottom: 15px;
+      font-size: 16px;
+      line-height: 23px;
+      font-family: 'Gorditas';
+      color: rgba(0,0,0,0.63);
+    }
+  }
+  &__links{
+    width: 275px;
+    max-width: 275px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 10px;
+    order: 3;
+    &--group {
+
+    }
+  }
+  &__link{
+    &--item{
+      a {
+        display: flex;
+        text-align: center;
+        padding-bottom: 15px;
+        font-size: 16px;
+        line-height: 23px;
+        font-family: 'Gorditas400';
+        color: rgba(0,0,0,0.63);
+        white-space: pre;
+      }
+    }
+    &--head {
+      white-space: pre;
+    }
+  }
+  &__newsletter {
+    width: 325px;
+    max-width: 325px;
+    margin: 20px 10px;
+    background: #FF8C7F;
+    box-shadow: 0px 0px 66px rgba(0, 0, 0, 0.11);
+    border-radius: 5px;
+    padding: 28px 32px 18px;
+    order: 4;
+    @include respond(tab-port){
+      order: 1;
+    }
+    &--head {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .form {
+      &__item {
+        margin-bottom: 15px;
+      }
+      &__button {
+        color: $red;
+        background-color: $white;
+        border: none;
+      }
+    }
+  }
+}

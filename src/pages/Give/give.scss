@@ -1,0 +1,342 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+.givePage {
+  .header {
+    background: url('../../assets/images/about-hero-bg.png') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 345px;
+    min-height: 345px;
+    //position: relative;
+    &__bg {
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, .53);
+    }
+
+    &__title {
+      position: relative;
+      color: $white;
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 110.5%;
+      text-align: center;
+      padding-top: 7.5rem;
+      z-index: 1;
+      @include respond(tab-land) {
+        font-size: 38px;
+      }
+      @include respond(tab-port) {
+        font-size: 28px;
+      }
+    }
+
+    &__title::after {
+      content: "";
+      position: absolute;
+      top: 85%;
+      width: 12%;
+      height: 30px;
+      background: $red;
+      z-index: -1;
+      left: 44%;
+      @include respond(tab-land) {
+      top: 87%;
+      width: 18%;
+      left: 41%;
+      height: 22px;
+      }
+      @include respond(tab-port) {
+          width: 25%;
+          top: 90%;
+          left: 38%;
+          height: 20px;
+      }
+  }
+
+    &__text {
+      font-family: Gorditas400;
+      font-size: 20px;
+      line-height: 125%;
+      color: $white;
+      text-align: center;
+      padding-top: 22px;
+      @include respond(tab-port) {
+        font-size: 17px;
+      }
+    }
+
+    &__container {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      @include respond(tab-land) {
+        width: 90%;
+      }
+    }
+  }
+  .give {
+    width: 80%;
+    max-width: 1200px;
+    display: flex;
+    background-color: $white;
+    justify-content: space-evenly;
+    margin: -65px auto 64px;
+    padding: 30px 45px;
+    box-shadow: 0px 4px 51px rgba(0, 0, 0, 0.05);
+    @include respond(tab-port){
+      flex-wrap: wrap;
+      width: 90%;
+      padding: 25px 10px;
+    }
+    &__item {
+      cursor: pointer;
+      padding: 25px;
+      border-radius: 5px;
+      min-width: 150px;
+      @include respond(tab-port){
+        min-width: 80px;
+        padding: 10px;
+      }
+      &.isSelected {
+        background-color: $logo-red;
+      }
+      &:hover {
+        background-color: rgba($logo-red, 0.5);
+      }
+      &--image {
+        text-align: center;
+        &-img {
+          width: 48px;
+          height: 48px;
+          @include respond(tab-land){
+            width: 34px;
+            height: 34px;
+          }
+          @include respond(tab-port){
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+      &--text {
+        font-size: 24px;
+        line-height: 34px;
+        text-align: center;
+        padding-top: 18px;
+        @include respond(tab-land){
+          font-size: 18px;
+          line-height: 26px;
+        }
+        @include respond(tab-port){
+          font-size: 14px;
+          line-height: 26px;
+        }
+      }
+    }
+
+  }
+
+  .payment-method {
+    padding: 40px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 51px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    padding: 40px;
+    width: 80%;
+    margin: 0 auto;
+    @include respond(tab-port){
+      width: 90%;
+      padding: 40px 20px;
+    }
+    &__head {
+      font-size: 24px;
+      line-height: 34px;
+      @include respond(tab-land){
+        font-size: 18px;
+        line-height: 26px;
+      }
+    }
+    &__group {
+      margin-left: 38px;
+      @include respond(tab-land){
+        margin-left: 29px;
+      }
+      @include respond(tab-land){
+        margin-left: 19px;
+      }
+    }
+    &__item {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      color: $black;
+      background: #FFFFFF;
+      box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.05);
+      border-radius: 5px;
+      padding: 16px 25px;
+      cursor: pointer;
+      &:hover {
+        background-color: $logo-red;
+      }
+      &.selected {
+        background-color: $red;
+        color: $white;
+      }
+      &--icon {
+        display: inline-block;
+        margin-right: 40px;
+      }
+    }
+
+    .bank-info {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 70px;
+      padding-left: 30px;
+      @include respond(tab-port){
+        padding-left: 10px;
+      }
+      &__list {
+        &--item {
+          font-size: 16px;
+          line-height: 23px;
+          color: rgba($black, 0.63);
+          padding-bottom: 17px;
+          @include respond(tab-port){
+            font-size: 14px;
+            line-height: 23px;
+          }
+        }
+      }
+
+    }
+  }
+
+  .recurring {
+
+    margin: 80px auto;
+    max-width: 1050px;
+
+    &__head {
+      text-align: center;
+      &--head {
+        font-family: GorditasBold;
+        font-size: 48px;
+        line-height: 68px;
+        color: $red;
+        position: relative;
+        z-index: 1;
+        span::after {
+          content: "";
+          position: absolute;
+          top: 55%;
+          width: 66%;
+          height: 30px;
+          background:#C9C9C9;
+          z-index: -1;
+          left: 17%;
+          @include respond(tab-land) {
+              height: 20px;
+          }
+          @include respond(tab-port) {
+              height: 0px;
+              top: 0%;
+              left: 0%;
+              width: 0%;
+        }
+      }
+        @include respond(tab-land) {
+          font-size: 34px;
+        }
+        @include respond(tab-port) {
+          font-size: 28px;
+          line-height: 48px;
+        }
+      }
+      &--text {
+        font-family: Gorditas400;
+        font-size: 20px;
+        line-height: 34px;
+        margin: 6px auto 30px;
+        width: 80%;
+      }
+    }
+    .form {
+      padding: 20px;
+      &__item {
+        text-align: center;
+        margin-bottom: 18px;
+        @include respond(tab-port) {
+          width: 80%;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      }
+      &__submit--btn {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+      }
+    }
+  }
+  // .MuiLoadingButton-root {
+  // display: flex;
+  // justify-content: center;
+  // margin-top: 30px;
+  // text-decoration: none;
+  // display: inline-block;
+  // border: none;
+  // transition: all 0.2s;
+  // position: relative;
+  // cursor: pointer;
+  // color: white;
+  // font-size: 16px;
+  // line-height: 23px;
+  // font-weight: 500;
+  // background: #EC100C;
+  // border-radius: 5px;
+  // padding: 10px 25px;
+  // font-family: Gorditas;
+  // white-space: pre;
+  // }
+
+  // .MuiLoadingButton-root:hover {
+  //   background: #EC100C;
+  //   transform: translateY(-0.05rem);
+  //   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  // }
+
+  // .MuiLoadingButton-root:active {
+  //   transform: translateY(-0.1rem);
+  //   border: var(--color-black);
+  //   background: #EC100C;
+  // }
+
+  .MuiLoadingButton-root:disabled {
+    opacity: 0.5;
+    cursor: unset;
+  }
+  .pay-button{
+    margin-top: 83px;
+    text-align: center;
+  }
+}
+
+.css-19mk8g1-MuiInputBase-root-MuiFilledInput-root::before {
+  border-bottom: none !important;
+}
+
+.css-19mk8g1-MuiInputBase-root-MuiFilledInput-root::after {
+      border-bottom: none !important;
+      }
+
+.css-17spqnz::before {
+  border-bottom: none !important;
+}
+.css-17spqnz::after {
+  border-bottom: none !important;
+}

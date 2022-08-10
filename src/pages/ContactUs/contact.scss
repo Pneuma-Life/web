@@ -1,0 +1,238 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+.contactPage {
+    .header {
+        background: url('../../assets/images/about-hero-bg.png') no-repeat center;
+        background-size: cover;
+        width: 100%;
+        height: 345px;
+        min-height: 345px;
+        //position: relative;
+        &__bg {
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, .53);
+        }
+
+        &__title {
+            position: relative;
+            color: $white;
+            font-weight: 700;
+            font-size: 64px;
+            line-height: 110.5%;
+            text-align: center;
+            padding-top: 7.5rem;
+            z-index: 1;
+            @include respond(tab-land) {
+                font-size: 38px;
+            }
+            @include respond(tab-port) {
+                font-size: 28px;
+            }
+        }
+        &__title::after {
+            content: "";
+            position: absolute;
+            top: 85%;
+            width: 28%;
+            height: 30px;
+            background: $red;
+            z-index: -1;
+            left: 36%;
+            @include respond(tab-land) {
+            top: 87%;
+            width: 33%;
+            left: 34%;
+            height: 22px;
+            }
+            @include respond(tab-port) {
+                width: 44%;
+                top: 93%;
+                left: 28%;
+                height: 20px;
+            }
+        }
+
+        &__text {
+            font-family: Gorditas400;
+            font-size: 20px;
+            line-height: 110.5%;
+            color: $white;
+            text-align: center;
+            padding-top: 22px;
+            @include respond(tab-port) {
+                font-size: 17px;
+            }
+        }
+
+        &__container {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            @include respond(tab-land) {
+                width: 90%;
+            }
+        }
+    }
+
+
+    .contact {
+        &-main {
+            width: 80%;
+            max-width: 1200px;
+
+            margin: -65px auto 20px;
+            @include respond(tab-land){
+                width: 90%;
+            }
+        }
+        &-top {
+            display: flex;
+            background-color: $white;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            box-shadow: 0px 4px 51px rgba(0, 0, 0, 0.05);
+        }
+        &__text {
+            padding: 35px 25px 25px;
+            min-width: 150px;
+            text-align: center;
+            max-width: 305px;
+            min-width: 200px;
+            &--head {
+                font-size: 24px;
+                line-height: 34px;
+            }
+
+            &--body {
+                padding-top: 18px;
+                font-family: Gorditas400;
+                font-size: 14px;
+                line-height: 21px;
+                color: rgba(0, 0, 0, .58);
+
+                &-item {
+                    padding-bottom: 40px;
+                }
+            }
+        }
+
+    }
+
+    .question {
+        margin: 50px auto 100px;
+
+        &__head {
+            font-size: 24px;
+            line-height: 34px;
+            margin-bottom: 38px;
+            @include respond(tab-port){
+                font-size: 18px;
+                line-height: 26px;
+            }
+        }
+
+        .select {
+            &__group {
+
+            }
+            &__item {
+                padding: 25px 50px;
+                background-color: rgba($black, 0.05);
+                color: $black;
+                font-size: 16px;
+                line-height: 23px;
+                border-radius: 5px;
+                margin-bottom: 18px;
+                cursor: pointer;
+                font-family: Gorditas400;
+                &:hover {
+                    color: $white;
+                    background-color: rgba($logo-red, 0.5);
+                }
+                &.isSelected {
+                    color: $white;
+                    background-color: $logo-red;
+                }
+                @include respond(tab-port){
+                    font-size: 12px;
+                    line-height: 18px;
+                    padding: 25px 20px;
+                }
+            }
+        }
+    }
+
+    .contact {
+        &__form {
+            margin-top: 92px;
+            @include respond(tab-port) {
+                margin-top: 20px;
+            }
+
+            &-wrap {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                @include respond(tab-port) {
+                    flex-wrap: wrap;
+                }
+            }
+        }
+    }
+
+    .form__item {
+        margin-right: 19px;
+        margin-top: 18px;
+        width: 100%;
+        @include respond(tab-port) {
+            margin-right: 0px;
+        }
+    }
+
+    .form__button {
+        height: 73px;
+        width: 244px;
+        padding-top: 25px;
+        padding-left: 4.5rem;
+        margin: 28px auto;
+    }
+
+    .physical-map {
+        position: relative;
+        width: 100%;
+        margin-top: 122px;
+        padding: 0 25px;
+        @include respond(tab-port){
+            padding: 0 10px;
+        }
+    }
+    #location-map {
+        width: 100%;
+        height: 450px;
+        max-height: 450px;
+        //max-width: 850px;
+        margin: 100px auto;
+        display: block;
+        border-radius: 0;
+        border: 0;
+        @include respond(tab-land){
+            margin: 0 auto 50px;
+        }
+    }
+}
+
+        .css-19mk8g1-MuiInputBase-root-MuiFilledInput-root::before {
+            border-bottom: none !important;
+          }
+          
+          .css-19mk8g1-MuiInputBase-root-MuiFilledInput-root::after {
+                border-bottom: none !important;
+                }
+          
+          .css-17spqnz::before {
+            border-bottom: none !important;
+          }
+          .css-17spqnz::after {
+            border-bottom: none !important;
+          }

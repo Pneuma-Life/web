@@ -1,0 +1,8 @@
+@import "./assets/scss/mixins";
+
+.apps--main {
+  margin-top: 105px;
+  @include respond(tab-port){
+    margin-top: 75px;
+  }
+}

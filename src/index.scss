@@ -1,0 +1,120 @@
+//@import url('https://fonts.googleapis.com/css2?family=Gorditas:wght@400;700&display=swap');
+
+@import "./assets/scss/fonts";
+@import "./assets/scss/variables";
+
+
+
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  //font-family: 'Roboto', sans-serif;
+  //font-family: 'Gorditas', cursive;
+  font-family: Gorditas;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    transform: translateY(-0.05rem);
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+button, .btn {
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  transition: all 0.2s;
+  position: relative;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  line-height: 23px;
+  font-weight: 500;
+  background: #EC100C;
+  border-radius: 5px;
+  padding: 10px 25px;
+  //font-family: 'Roboto', sans-serif;
+  //font-family: 'Gorditas', cursive;
+  font-family: Gorditas;
+  white-space: pre;
+  &:hover {
+    transform: translateY(-0.05rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+    border: var(--color-black);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: unset;
+  }
+
+}
+
+.btn-secondary {
+  color: $red;
+  background: $white;
+}
+
+.btn-secondary-outlined{
+  border: 1px solid $red;
+}
+.icon-btn {
+  display: flex;
+  align-content: center;
+  span {
+    margin: 0 10px;
+  }
+}
+
+.text-btn{
+  background: none;
+  border: none;
+  &:hover {
+    box-shadow: unset;
+  }
+}
+
+@keyframes shootDownFromTopRight {
+  0% {
+    opacity: 0;
+    transform: translate(50%, -50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fromBottomUp {
+  0% {
+    opacity: 0;
+    transform: translate(0, 10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}

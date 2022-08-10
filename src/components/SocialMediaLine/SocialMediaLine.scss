@@ -1,0 +1,55 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+.smcomponent {
+  .sm {
+    background-color: #D9D9D9;
+    display: flex;
+    padding: 20px 60px;
+    justify-content: space-between;
+    @include respond(tab-land){
+      display: block;
+      padding: 20px 20px;
+    }
+    &__text {
+      font-size: 20px;
+      line-height: 28px;
+      width: 100%;
+      vertical-align: middle;
+      @include respond(tab-land){
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      @include respond(tab-port){
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    &__links {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      @include respond(tab-land){
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+      //@include respond(desktop){
+      //  display: block;
+      //}
+      &--item {
+        &-link {
+          white-space: pre;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: 40px;
+          color: rgba($black, 0.58);
+          font-family: Gorditas400;
+          @include respond(tab-land){
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+  }
+}

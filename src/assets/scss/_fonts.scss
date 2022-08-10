@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "JennaSue";
+  src: local("JennaSue"),
+  url("../fonts/JennaSue.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Gorditas400";
+  src: local("Gorditas400"),
+  url("../fonts/Gordita_Regular.otf") format("opentype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "GorditasThin";
+  src: local("GorditasThin"),
+  url("../fonts/Gordita_Thin.otf") format("opentype");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "GorditasLight";
+  src: local("GorditasLight"),
+  url("../fonts/Gordita_Light.otf") format("opentype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Gorditas";
+  src: local("Gorditas"),
+  url("../fonts/Gordita_Medium.otf") format("opentype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "GorditasBold";
+  src: local("GorditasBold"),
+  url("../fonts/Gordita_Bold.otf") format("opentype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "GorditasBlack";
+  src: local("GorditasBlack"),
+  url("../fonts/Gordita_Black.otf") format("opentype");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "GorditasUltra";
+  src: local("GorditasUltra"),
+  url("../fonts/Gordita_Ultra.otf") format("opentype");
+  font-weight: 950;
+}
