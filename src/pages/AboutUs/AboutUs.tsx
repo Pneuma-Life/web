@@ -27,7 +27,7 @@ const AboutUsHeader = () => {
                 <p className="AboutUs__text">About</p>
                 <div className="AboutUs__text-header">
                     <div className="AboutUs__underline"></div>
-                    Pneuma Life City Church
+                    Pneumalife City Church
 
                 </div>
             </div>
@@ -43,7 +43,7 @@ const AboutUsMission = () => {
         <div className="AboutUs__mission--wrap">
             <div className="AboutUs__mission--wraptt">
                 <p className="AboutUs__mission--header">Our Missions</p>
-                <p className="AboutUs__mission--text">Pneuma life exist to build a people who are Christ centered and Spirit driven, taught to know God for themselves. Influencing individuals, cities and nations with the light of the glorious gospel as ambassadors of the kingdom.</p>
+                <p className="AboutUs__mission--text">Pneumalife exist to build a people who are Christ centered and Spirit driven, taught to know God for themselves. Influencing individuals, cities and nations with the light of the glorious gospel as ambassadors of the kingdom.</p>
             </div>
             <div className="AboutUs__mission--wraptt"> 
                 <p className="AboutUs__mission--header">Our Vision</p>
@@ -74,7 +74,7 @@ const MeetOurPastor = () => {
                     Pastor Dafe Richard Iviahwo is an insightful teacher of God’s word,
                     consistently making the supernatural common, this has been proven by shared
                     testimonies of transformed lives. He is the president of Faithbreed Global
-                    Ministery and currently Pastors Pneuma Life City Church. His ministry has been source of inspiration to many and he is still inspiring more.
+                    Ministry and currently Pastors Pneumalife City Church. His ministry has been source of inspiration to many and he is still inspiring more.
                 </div>
                 <div className="AboutUs__meet--social">
                     <p className="AboutUs__meet--social--text">Follow on social media</p>

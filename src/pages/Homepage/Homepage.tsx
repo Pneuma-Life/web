@@ -58,7 +58,7 @@ const Homepage = () => {
                                 Welcome to
                             </div>
                             <div className="hero__main--text-main">
-                               <span>Pneuma Life </span><br />
+                               <span>Pneumalife </span><br />
                                 City Church
                             </div>
                             <div className="hero__main--btn">
@@ -106,7 +106,7 @@ const Homepage = () => {
                        <span>Welcome to</span> Church
                     </div>
                     <div className="welcome__text--text">
-                        Pneuma life exist to build a people who are Christ centered and Spirit driven, taught to know God for themselves, Influencing individuals, cities and nations with the light of the glorious gospel as ambassadors of the kingdom
+                        Pneumalife exist to build a people who are Christ centered and Spirit driven, taught to know God for themselves, Influencing individuals, cities and nations with the light of the glorious gospel as ambassadors of the kingdom
                     </div>
                     <div className="welcome__text--btn">
                         <button className="btn icon-btn text-btn">
@@ -116,7 +116,7 @@ const Homepage = () => {
                     </div>
                 </div>
                 <div className="welcome__image">
-                    <img src={Welcome} alt="Members in Pneuma Life City Church" className="welcome__image--img" />
+                    <img src={Welcome} alt="Members in Pneumalife City Church" className="welcome__image--img" />
                 </div>
 
             </div>
@@ -131,8 +131,8 @@ const Homepage = () => {
                         Dafe Richard Iviahwo
                     </div>
                     <div className="pastor__text--text">
-                        I serve as the senior Pastor of Pneuma Life City Church.
-                        Pneuma Life City Church exists to instill kingdom culture in
+                        I serve as the senior Pastor of Pneumalife City Church.
+                        Pneumalife City Church exists to instill kingdom culture in
                         you , with our Christ-Centred messages and spirit-Driven meetings,
                         so you can fulfill God’s plan, which is to influence individuals, cities
                         and nations with the Light of the Glorious Gospel

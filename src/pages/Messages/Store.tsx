@@ -2,7 +2,7 @@ import React, { useEffect, useState} from 'react';
 import Footer from '../../components/Footer/Footer';
 import Navbar from '../../components/Navbar/Navbar';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import YoutubeIcon from '../../assets/icons/youtube_white.png';
 import Transcript from '../../assets/icons/transcript.png'
 import axios from '../../api/index';
@@ -74,12 +74,14 @@ const StoreComponent = () => {
                   </ul>
                 </div>
                 <div className="store__component_sec--footer">
-                  <button 
+                 
+                 <button 
                   className="store__component_sec-btn"
                   >
                     <span>Download Message Transcript</span>
                     <img src={Transcript} alt="transcript_icon"/>
                     </button>
+                    
                 </div>
               </div>
               <div className="store__component_secc">
