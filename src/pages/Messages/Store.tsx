@@ -38,7 +38,7 @@ const StoreComponent = () => {
     return(
       
         <div className="store__component">
-          {
+          {  stores.youtubeLink ?
             <div className="store__component--video">
                 <iframe id='demoVideo'
                         src={stores.youtubeLink}
@@ -46,7 +46,12 @@ const StoreComponent = () => {
                         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                         className="iframe-video"></iframe>
+            </div> 
+            : 
+            <div className="store__component--video"> 
+              <img src={stores.image} alt="Sermon image" />
             </div>
+
           }
 
           {
@@ -65,7 +70,7 @@ const StoreComponent = () => {
                 <div className="store__component_sec-pastor">
                   <p className="store__component_sec-author">{stores.author} </p>
                   <ul className="store__component_sec-date">
-                    <li>{stores.createdAt}</li>
+                    <li>{stores.createdAt?.toLocaleString().split('T')[0]}</li>
                   </ul>
                 </div>
                 <div className="store__component_sec--footer">
@@ -80,12 +85,22 @@ const StoreComponent = () => {
               <div className="store__component_secc">
                   <p className="store__component_secc-text">Make your device an asset. <br />
                       Listen to audio messages on the go!</p>
-                      <button 
-                      className="store__component_secc-btn"
-                      >
-                      <FileDownloadIcon className="downloadIcon" />
-                          <span>Purchase Audio Message</span>
-                      </button>
+                      { stores.payable === true ? 
+                          <button 
+                          className="store__component_secc-btn"
+                          >
+                          <FileDownloadIcon className="downloadIcon" />
+                              <span>Purchase Audio Message</span>
+                          </button> : 
+                          
+                          <button 
+                          className="store__component_secc-btn"
+                          >
+                          <FileDownloadIcon className="downloadIcon" />
+                              <span>Download Audio Message</span>
+                          </button>
+                      }
+                    
               </div>
           </div>
           }
