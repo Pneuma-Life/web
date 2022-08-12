@@ -49,7 +49,7 @@ const StoreComponent = () => {
             </div> 
             : 
             <div className="store__component--video"> 
-              <img src={stores.image} alt="Sermon image" />
+              <img src={stores.image} alt="Sermon image" className="store__component--image" />
             </div>
 
           }
