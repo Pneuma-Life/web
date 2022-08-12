@@ -246,6 +246,7 @@
                   line-height: 20px;
                   color: rgba(0, 0, 0, 0.58);
                   padding-top: 10px;
+                  
               }
               &-series {
                   font-family: Gorditas;
@@ -404,6 +405,7 @@
         line-height: 20px;
         color: rgba(0, 0, 0, 0.58);
         padding-top: 10px;
+        padding-right: 4rem;
     }
     &-series {
         font-family: Gorditas;
@@ -423,8 +425,11 @@
     }
     &-pastor {
        display: flex;
-       justify-content: space-between;
+      //  justify-content: space-between;
        padding-bottom: 23px;
+    }
+    &-author {
+      padding-right: 6rem;
     }
     &-date {
         list-style: none;

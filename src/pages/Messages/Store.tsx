@@ -74,33 +74,39 @@ const StoreComponent = () => {
                   </ul>
                 </div>
                 <div className="store__component_sec--footer">
-                 
+                <a
+                  href={stores.file}
+                  target="_blank"
+                  download>
                  <button 
                   className="store__component_sec-btn"
                   >
                     <span>Download Message Transcript</span>
                     <img src={Transcript} alt="transcript_icon"/>
-                    </button>
-                    
+                  </button></a>  
                 </div>
               </div>
               <div className="store__component_secc">
                   <p className="store__component_secc-text">Make your device an asset. <br />
                       Listen to audio messages on the go!</p>
                       { stores.payable === true ? 
-                          <button 
+                         <button 
                           className="store__component_secc-btn"
                           >
                           <FileDownloadIcon className="downloadIcon" />
                               <span>Purchase Audio Message</span>
                           </button> : 
-                          
+                          <a
+                          href={stores.audio}
+                          target="_blank"
+                          download>
                           <button 
                           className="store__component_secc-btn"
                           >
                           <FileDownloadIcon className="downloadIcon" />
                               <span>Download Audio Message</span>
                           </button>
+                          </a>
                       }
                     
               </div>
