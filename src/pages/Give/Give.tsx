@@ -172,7 +172,7 @@ const Give = () => {
                     </div>
                 </div>
             </div>
-            {showPaymentMethod ?
+            {/* {showPaymentMethod ?
                 <div className="payment-method">
                     <div className="payment-method__head">
                         Choose Payment Method.
@@ -221,7 +221,7 @@ const Give = () => {
                 </div>
                 :
                 <></>
-            }
+            }  */}
 
 
             {selectedPaymentMethod === paymentMethodEnum.cardPayment ?
@@ -241,7 +241,7 @@ const Give = () => {
                 : <></>
             }
 
-            { selectedGive === undefined ?
+            {/* { selectedGive === undefined ? */}
                 <div className="recurring">
                 <div className="recurring__head">
                     <div className="recurring__head--head">
@@ -337,7 +337,7 @@ const Give = () => {
             </div>
                 :
                 <></>
-            }
+            {/* } */}
             <Footer />
         </div>
     )
