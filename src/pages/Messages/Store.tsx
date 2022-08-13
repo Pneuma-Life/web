@@ -73,7 +73,9 @@ const StoreComponent = () => {
                     <li>{stores.createdAt?.toLocaleString().split('T')[0]}</li>
                   </ul>
                 </div>
+
                 <div className="store__component_sec--footer">
+              { stores.file ?
                 <a
                   href={stores.file}
                   target="_blank"
@@ -83,7 +85,7 @@ const StoreComponent = () => {
                   >
                     <span>Download Message Transcript</span>
                     <img src={Transcript} alt="transcript_icon"/>
-                  </button></a>  
+                  </button></a> : null }  
                 </div>
               </div>
               <div className="store__component_secc">
