@@ -439,6 +439,9 @@
     &-date {
         list-style: none;
         font-size: 14px;
+        @include respond(tab-land) {
+          font-size: 10px;
+        }
     }
     &-date li::before {
       content:  "\2022";

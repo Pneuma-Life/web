@@ -150,7 +150,7 @@ const Homepage = () => {
 
 
                 <div className="sermon__cards">
-                    { stores.map((store) =>(
+                    { stores.slice(0,3).map((store) =>(
                     <div 
                     className="sermon__card"
                     key={store._id}

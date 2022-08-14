@@ -10,7 +10,7 @@ import Give from '../pages/Give/Give';
 import ContactUs from '../pages/ContactUs/ContactUs';
 import Store from '../pages/Messages/Store';
 import Communities from '../pages/Communities/Communities';
-import Series from '../pages/Messages/Series';
+// import Series from '../pages/Messages/Series';
 import AdminStore from '../pages/Admin/AdminStore';
 import AdminBlog from '../pages/Admin/AdminBlog';
 
@@ -30,7 +30,7 @@ export const AppRoutes = () => {
             <Route path="/give" element={<Give />} />
             <Route path="/contactus" element={<ContactUs />} />
             <Route path="/communities" element={<Communities />} />
-            <Route path="/series" element={<Series />} />
+            {/* <Route path="/series" element={<Series />} /> */}
             <Route path="/admin-store" element={<AdminStore />} />
             <Route path="/admin-blog" element={<AdminBlog />} />
         </Routes>
