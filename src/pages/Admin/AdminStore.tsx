@@ -23,6 +23,7 @@ const AdminStore = () => {
         message: '',
         amount: '',
         youtubeLink: '',
+        datePreached: '',
         payable: 'false',
     });
 
@@ -75,8 +76,8 @@ const AdminStore = () => {
             formData.append('message', adminStore.message);
             formData.append('amount', adminStore.amount);
             formData.append('youtubeLink', adminStore.youtubeLink);
+            formData.append('datePreached', adminStore.datePreached);
             formData.append('payable', adminStore.payable);
-
             const response = await axios.post(
                 'store',
                 formData
@@ -91,7 +92,8 @@ const AdminStore = () => {
                 message: '',
                 amount: '',
                 youtubeLink: '',
-                payable: 'false',
+                datePreached: '',
+                payable: 'false'
             });
             console.log(adminStore);
             setSuccessMsg('Message uploaded successfully');
@@ -193,6 +195,21 @@ const AdminStore = () => {
                                 style={{ width: '100%', color: 'rgba(0,0,0,0.58)', backgroundColor: 'rgba(0, 0, 0, 0.05)', borderRadius: '5px' }}
                                 variant="filled"
                                 onChange={(e)=>setAdminStore({...adminStore, youtubeLink: e.target.value})}
+                            />
+                        </div>
+                        <div className="form__dob">
+                            <TextField
+                                value={adminStore.datePreached}
+                                id="datePreached"
+                                label="Date Message Preached"
+                                defaultValue="1990-01-01"
+                                type="date"
+                                style={{ width: '100%', color: 'rgba(0,0,0,0.58)', backgroundColor: 'rgba(0, 0, 0, 0.05)', borderRadius: '5px' }}
+                                variant="filled"
+                                onChange={(e)=>setAdminStore({...adminStore, datePreached: e.target.value})}
+                                InputLabelProps={{
+                                    shrink: true,
+                                }}
                             />
                         </div>
                         <div className="form__item">
