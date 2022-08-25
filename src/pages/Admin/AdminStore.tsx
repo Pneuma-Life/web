@@ -55,10 +55,6 @@ const AdminStore = () => {
     const [audio, setAudio] = useState('');
     //const [payable, setPayable] = useState(false);
 
-    useEffect(() => {
-        console.log(` from use effect`, audio);
-        console.log(` from use effect`, typeof(audio));
-    }, [audio, image,])
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();

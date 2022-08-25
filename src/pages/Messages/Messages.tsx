@@ -127,11 +127,8 @@ const MessagesCards = () => {
 
     useEffect(() => {
         setLoading(true);
-        axios.get('store').then(res => {
-            console.log(res.data);
-            console.log(res.data.query)        
+        axios.get('store').then(res => {       
             setStores(res.data.query);
-            // setId(res.data.query[0]._id);
             setLoading(false);
         }).catch(err => console.log(err))
     }, [])

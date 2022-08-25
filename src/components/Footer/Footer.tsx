@@ -128,13 +128,11 @@ const Footer = () => {
                         />
                         { errormsg ? 
                             <Alert severity="error" variant="outlined">
-                            {/* <AlertTitle>Error</AlertTitle> */}
                                 {errormsg}
                             </Alert> 
                             : null }
                         { successMsg ?
                             <Alert severity="success" variant="outlined" >
-                            {/* <AlertTitle>Success</AlertTitle> */}
                                 {successMsg}
                             </Alert>
                         : null}
