@@ -18,7 +18,7 @@ const Messages = () => {
     <div className="messagesPage">
         <Navbar />
         <MessageHeader />
-        <SearchMessage />
+        {/* <SearchMessage /> */}
         <MessagesCards />
         <div className="messagesPage__pagination">
             <Pagination count={10} variant="outlined" shape="rounded" />
@@ -43,35 +43,137 @@ const MessageHeader = () => {
     )
 }
 
-const SearchMessage = () => {
+// const SearchMessage = () => {
+//     const [sortBy, setSortBy] = useState("");
+//     const [searchData, setSearchData] = useState({
+//         query: ""
+//     })
+//     const [searchResult, setSearchResult] = useState([])
+//     const [searchValue, setSearchValue] = useState("");
+//     const handleSortBy = (e: SelectChangeEvent) => {
+//         setSortBy(e.target.value);
+//         // sort result here
+//     };
+
+//     const handleSearch = async () => {
+//         if (searchValue.trim() === "") return;
+//       // handle search here
+//       const response: any = await axios.post('store/search', JSON.stringify({
+//         query: searchData.query
+//       }))
+//       .then(() =>setSearchResult(response))
+//       .catch((err) => setSearchResult([]));  
+//     };
+
+//     // const [store, setStore] = useState<any[]>([])
+
+//     // useEffect(() => {
+//     //     axios.get('store').then(res => {
+//     //         console.log(res.data);
+//     //         console.log(res.data.query)        
+//     //         setBlogs(res.data.query);
+//     //     }).catch(err => console.log(err))
+//     // }, [])
+
+//     const handleKeyPress = (event: React.KeyboardEvent<HTMLElement>) => {
+//         if (event.key === "Enter") {
+//             handleSearch();
+//         }
+//     };
+
+//     return (
+//         <div className="search">
+//             <div className="search__input--container">
+//                 <div className="search__input">
+//                     <input
+//                         value={searchValue}
+//                         onKeyDown={handleKeyPress}
+//                         onChange={(e) => setSearchValue(e.target.value)}
+//                         className="search_filter"
+//                         placeholder="Enter sermon name"
+//                     />
+
+//                 </div>
+//                 <div className="search__input--btn" onClick={handleSearch}>
+//                     <SearchIcon style={{ color: "white" }} fontSize={"large"} />
+//                 </div>
+//             </div>
+//             <div className="search__select">
+//                 {/*<p className="search__select-text">Sort By :</p>*/}
+//                 {/*    <select className="search_select">*/}
+//                 {/*        <option value="">A - Z</option>*/}
+//                 {/*        <option value="">Latest Sermon</option>*/}
+//                 {/*        <option value="">Oldest</option>*/}
+//                 {/*        <option value="">Series</option>*/}
+//                 {/*    </select>*/}
+//                 <p className="search__select-text">Sort By :</p>
+//                 <FormControl fullWidth>
+
+//                     <Select
+//                         labelId="SortBy"
+//                         id="SortBy"
+//                         value={sortBy}
+//                         label="Sort By"
+//                         onChange={handleSortBy}
+//                         displayEmpty
+//                         renderValue={(value) => value}
+//                     >
+//                         <MenuItem value={""}>None</MenuItem>
+//                         <MenuItem value={"A - Z"}> A - Z </MenuItem>
+//                         <MenuItem value={"Latest Sermon"}> Latest Sermon </MenuItem>
+//                         <MenuItem value={"Oldest"}> Oldest </MenuItem>
+//                         <MenuItem value={"Series"}> Series </MenuItem>
+//                     </Select>
+//                 </FormControl>
+//             </div>
+//         </div>
+//     );
+// }
+
+
+const MessagesCards = () => {
+    const [stores, setStores] = useState<any[]>([]);
+    const [loading, setLoading] = useState(false);
+    // const [id, setId] = useState('');
     const [sortBy, setSortBy] = useState("");
+    // const [searchData, setSearchData] = useState({
+    //     query: ""
+    // })
+    const [searchResult, setSearchResult] = useState<any[]>([]);
     const [searchValue, setSearchValue] = useState("");
     const handleSortBy = (e: SelectChangeEvent) => {
         setSortBy(e.target.value);
         // sort result here
     };
-    const handleSearch = () => {
-        if (searchValue.trim() === "") return;
-      // handle search here
-    };
-
-    // const [store, setStore] = useState<any[]>([])
-
-    // useEffect(() => {
-    //     axios.get('store').then(res => {
-    //         console.log(res.data);
-    //         console.log(res.data.query)        
-    //         setBlogs(res.data.query);
-    //     }).catch(err => console.log(err))
-    // }, [])
-
     const handleKeyPress = (event: React.KeyboardEvent<HTMLElement>) => {
         if (event.key === "Enter") {
             handleSearch();
         }
     };
 
+    const handleSearch = async () => {
+        if (searchValue.trim() === "") return;
+      // handle search here
+      const response: any = await axios.post('store/search', {"query": searchValue},
+        {headers: {'Content-Type': 'application/json'}}
+      )
+      .then((response) => {
+        setSearchResult(response.data.query)
+        }
+        )
+      .catch((err) => setSearchResult([]));  
+    };
+
+    useEffect(() => {
+        setLoading(true);
+        axios.get('store').then(res => {       
+            setStores(res.data.query);
+            setLoading(false);
+        }).catch(err => console.log(err))
+    }, [])
+
     return (
+    <>
         <div className="search">
             <div className="search__input--container">
                 <div className="search__input">
@@ -117,61 +219,91 @@ const SearchMessage = () => {
                 </FormControl>
             </div>
         </div>
-    );
-}
 
-const MessagesCards = () => {
-    const [stores, setStores] = useState<any[]>([]);
-    const [loading, setLoading] = useState(false);
-    // const [id, setId] = useState('');
+        {searchValue.length > 1 ? (
+                    searchResult.map((store) => {
+                        return (
+                            <div 
+                            key={store._id}
+                            className="message__card"
+                            >
+                            <Link to={`/store/${store._id}`}>
+                           <div className="message__card--image">
+                               <img src={store.image} alt=""  className="message__card--image-img" />
+                               {/* <div className="message__card--date"> 01 <br/> May </div> */}
+                           </div>
+                           <div className="message__card--body">
+                               <div className="message__card--body-author">
+                                   {store.author}
+                               </div>
+                               <div className="message__card--body-title">
+                               {/* <Link to="/message">  Planted ( PT 1) </Link> */}
+                               {store.title}
+                               </div>
+                               <div className="message__card--body-desc">
+                                   {store.message}
+                               </div>
+                               <div className="message__card--body-series">
+                                  Series: <span> {store.title} </span>
+                                  
+                               </div>
+                               <div className="message__card--body-rule"></div>
+                               <div className="message__card--footer">
+                                   <p>View Message</p>
+                                   <ArrowForwardIcon className="downloadIcon" />
+                               </div>
+                           </div>
+                           </Link> 
+                           {/* <div className="message__card--date"> 01 <br/> May </div> */}
+                        </div>
+                        )
+                    })
+                ) : (
+                    stores.map((store) => {
+                        return (
+                            <div 
+                            key={store._id}
+                            className="message__card"
+                            >
+                            <Link to={`/store/${store._id}`}>
+                           <div className="message__card--image">
+                               <img src={store.image} alt=""  className="message__card--image-img" />
+                               {/* <div className="message__card--date"> 01 <br/> May </div> */}
+                           </div>
+                           <div className="message__card--body">
+                               <div className="message__card--body-author">
+                                   {store.author}
+                               </div>
+                               <div className="message__card--body-title">
+                               {/* <Link to="/message">  Planted ( PT 1) </Link> */}
+                               {store.title}
+                               </div>
+                               <div className="message__card--body-desc">
+                                   {store.message}
+                               </div>
+                               <div className="message__card--body-series">
+                                  Series: <span> {store.title} </span>
+                                  
+                               </div>
+                               <div className="message__card--body-rule"></div>
+                               <div className="message__card--footer">
+                                   <p>View Message</p>
+                                   <ArrowForwardIcon className="downloadIcon" />
+                               </div>
+                           </div>
+                           </Link> 
+                        </div>
+                        )
+                    })
+                )}
 
-    useEffect(() => {
-        setLoading(true);
-        axios.get('store').then(res => {       
-            setStores(res.data.query);
-            setLoading(false);
-        }).catch(err => console.log(err))
-    }, [])
-    return (
         <div className="message__cards">
-            { stores.map((store) =>(
-                   <div 
-                   key={store._id}
-                   className="message__card"
-                   >
-                   <Link to={`/store/${store._id}`}>
-                  <div className="message__card--image">
-                      <img src={store.image} alt=""  className="message__card--image-img" />
-                      {/* <div className="message__card--date"> 01 <br/> May </div> */}
-                  </div>
-                  <div className="message__card--body">
-                      <div className="message__card--body-author">
-                          {store.author}
-                      </div>
-                      <div className="message__card--body-title">
-                      {/* <Link to="/message">  Planted ( PT 1) </Link> */}
-                      {store.title}
-                      </div>
-                      <div className="message__card--body-desc">
-                          {store.message}
-                      </div>
-                      <div className="message__card--body-series">
-                         Series: <span> {store.title} </span>
-                         
-                      </div>
-                      <div className="message__card--body-rule"></div>
-                      <div className="message__card--footer">
-                          <p>View Message</p>
-                          <ArrowForwardIcon className="downloadIcon" />
-                      </div>
-                  </div>
-                  </Link> 
-                  {/* <div className="message__card--date"> 01 <br/> May </div> */}
-          </div>
-     ))}
      </div>
-    )
-}
+</> 
+) //return end
+} //messageCards end
+
+
 
 // const MessageCard = () => {
     
