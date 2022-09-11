@@ -70,7 +70,7 @@ const StoreComponent = () => {
                 <div className="store__component_sec-pastor">
                   <p className="store__component_sec-author">{stores.author} </p>
                   <ul className="store__component_sec-date">
-                    <li>{stores.createdAt?.toLocaleString().split('T')[0]}</li>
+                    <li>{stores.datePreached?.toLocaleString().split('T')[0]}</li>
                   </ul>
                 </div>
 

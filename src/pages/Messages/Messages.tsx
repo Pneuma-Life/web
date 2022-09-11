@@ -220,8 +220,9 @@ const MessagesCards = () => {
             </div>
         </div>
         <div className="message__cards">
-            { searchValue.length > 1 ? (
-                    searchResult.map((store) => {
+            { searchValue.length > 1 ? 
+                (
+                  searchResult.map((store) => {
                         return (
                             <div 
                             key={store._id}
@@ -295,7 +296,8 @@ const MessagesCards = () => {
                         </div>
                         )
                     })
-        )} 
+                )
+            } 
     </div>
 </> 
 ) //return end
