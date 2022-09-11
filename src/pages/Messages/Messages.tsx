@@ -161,7 +161,7 @@ const MessagesCards = () => {
         setSearchResult(response.data.query)
         }
         )
-      .catch((err) => setSearchResult([]));  
+      .catch((err) => setSearchResult(stores));  
     };
 
     useEffect(() => {
@@ -186,8 +186,8 @@ const MessagesCards = () => {
                     />
 
                 </div>
-                <div className="search__input--btn" onClick={handleSearch}>
-                    <SearchIcon style={{ color: "white" }} fontSize={"large"} />
+                <div className="search__input--btn">
+                    <SearchIcon onClick={handleSearch} style={{ color: "white" }} fontSize={"large"} />
                 </div>
             </div>
             <div className="search__select">
@@ -219,8 +219,8 @@ const MessagesCards = () => {
                 </FormControl>
             </div>
         </div>
-
-        {searchValue.length > 1 ? (
+        <div className="message__cards">
+            { searchValue.length > 1 ? (
                     searchResult.map((store) => {
                         return (
                             <div 
@@ -295,10 +295,8 @@ const MessagesCards = () => {
                         </div>
                         )
                     })
-                )}
-
-        <div className="message__cards">
-     </div>
+        )} 
+    </div>
 </> 
 ) //return end
 } //messageCards end
