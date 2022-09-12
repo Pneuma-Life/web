@@ -133,6 +133,7 @@ const MessageHeader = () => {
 
 const MessagesCards = () => {
     const [stores, setStores] = useState<any[]>([]);
+    const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(false);
     // const [id, setId] = useState('');
     const [sortBy, setSortBy] = useState("");
@@ -150,7 +151,7 @@ const MessagesCards = () => {
             handleSearch();
         }
     };
-
+    
     const handleSearch = async () => {
         if (searchValue.trim() === "") return;
       // handle search here
@@ -158,7 +159,13 @@ const MessagesCards = () => {
         {headers: {'Content-Type': 'application/json'}}
       )
       .then((response) => {
-        setSearchResult(response.data.query)
+        if(response.data.query === "No Query Found") {
+            setSearchResult(stores)
+            setMessage("Sermon not found, please search using the correct title of the message")  
+        } else {
+            setSearchResult(response.data.query)
+            setMessage("")  
+        }
         }
         )
       .catch((err) => setSearchResult(stores));  
@@ -219,7 +226,13 @@ const MessagesCards = () => {
                 </FormControl>
             </div>
         </div>
+        <div 
+        style={{fontSize: "12px",
+         color: "#900000", 
+        textAlign: "center", 
+       }}>{message}</div>
         <div className="message__cards">
+            
             { searchValue.length > 1 ? 
                 (
                   searchResult.map((store) => {
