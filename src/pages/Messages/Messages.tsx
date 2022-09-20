@@ -21,7 +21,7 @@ const Messages = () => {
         {/* <SearchMessage /> */}
         <MessagesCards />
         <div className="messagesPage__pagination">
-            <Pagination count={10} variant="outlined" shape="rounded" />
+            <Pagination count={6} variant="outlined" shape="rounded" />
         </div>
         <Footer />
     </div>

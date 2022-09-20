@@ -11,7 +11,7 @@ const Events = () => {
         <Header />
         <EventCards />
         <div className="eventPage__pagination">
-            <Pagination count={10} variant="outlined" shape="rounded" />
+            <Pagination count={6} variant="outlined" shape="rounded" />
         </div>
         <Footer />
     </div>

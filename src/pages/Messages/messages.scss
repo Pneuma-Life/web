@@ -212,6 +212,7 @@
 
             &-img {
               width: 100%;
+              max-height: 190px;
             }
           }
           &--body {
@@ -264,7 +265,7 @@
                   font-weight: 500;
                   font-size: 14px;
                   line-height: 20px;
-                  color:#FF8177;
+                  color: $black;
               }
               &-rule {
                   border: 1px solid rgba(0, 0, 0, 0.11);
@@ -333,7 +334,10 @@
     &--video {
       width: 80%;
       margin: 0 auto;
-      padding-top: 20px;  
+      padding-top: 20px;
+      @include respond(tab-port) {
+        width: 91%;
+      }  
     }
     &--image {
       width: 100%;
@@ -394,6 +398,9 @@
         @include respond(tab-land) {
           flex-wrap: wrap;
         }
+        @include respond(tab-port) {
+          width: 91%;
+        }
     }
     &_sec {
       &-title {
@@ -431,7 +438,7 @@
         font-weight: 500;
         font-size: 14px;
         line-height: 20px;
-        color:#FF8177;
+        color: $black;
     }
     &-pastor {
        display: flex;
@@ -487,6 +494,9 @@
       max-height: 167px;
       @include respond(tab-land) {
         margin-top: 30px;
+      }
+      @include respond(tab-port) {
+        width: 100%;
       }
       &-text {
         font-family: Gorditas;
