@@ -76,16 +76,23 @@
 
   .search {
       display: flex;
-      justify-content: center;
-      width: 80%;
-      margin: 37px auto 0;
+      justify-content: space-between;
+      // width: 80%;
+      margin-top: 37px;
+      margin-right: 38px;
+      margin-left: 38px;
+      // margin: 37px auto 0;
       padding: 50px 50px 2px 50px;
     @include respond(tab-land){
+      margin: 37px auto 0;
       padding: 25px;
       flex-wrap: wrap;
+      width: 100%;
     }
     @include respond(tab-port){
+      margin: 37px auto 0;
       display: block;
+      width: 100%;
     }
       &__input {
           //flex-basis: 60%;
@@ -153,10 +160,14 @@
             align-items: center;
             //width: 200px;
             height: 60px;
+            @include respond(tab-land) {
+              display: none;
+            }
             @include respond(tab-port) {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
+              display: none;
+              // display: flex;
+              // flex-direction: column;
+              // justify-content: center;
             }
             &-text {
               font-family: Gorditas400;

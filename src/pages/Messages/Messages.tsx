@@ -252,13 +252,13 @@ const MessagesCards = () => {
                                </div>
                                <div className="message__card--body-title">
                                {/* <Link to="/message">  Planted ( PT 1) </Link> */}
-                               {store.title}
+                               {store.title.length > 30 ? `${store.title.substring(0, 30)}...` : store.title}
                                </div>
                                <div className="message__card--body-desc">
-                                   {store.message}
+                                   {store.message.length > 45 ? `${store.message.substring(0, 45)}...` : store.message} 
                                </div>
                                <div className="message__card--body-series">
-                                  Series: <span> {store.title} </span>
+                                  Series: <span> {store.title.length > 30 ? `${store.title.substring(0, 30)}...` : store.title} </span>
                                   
                                </div>
                                <div className="message__card--body-rule"></div>
@@ -290,13 +290,13 @@ const MessagesCards = () => {
                                </div>
                                <div className="message__card--body-title">
                                {/* <Link to="/message">  Planted ( PT 1) </Link> */}
-                               {store.title}
+                               {store.title.length > 30 ? `${store.title.substring(0, 30)}...` : store.title}
                                </div>
                                <div className="message__card--body-desc">
-                                   {store.message}
+                               {store.message.length > 45 ? `${store.message.substring(0, 45)}...` : store.message} 
                                </div>
                                <div className="message__card--body-series">
-                                  Series: <span> {store.title} </span>
+                                  Series: <span> {store.title.length > 30 ? `${store.title.substring(0, 30)}...` : store.title} </span>
                                   
                                </div>
                                <div className="message__card--body-rule"></div>
