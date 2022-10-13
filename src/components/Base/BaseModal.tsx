@@ -45,7 +45,7 @@ interface PropsI  {
     purpose: string;
     showModal: boolean;
     onClose:  () => void;
-    children: JSX.Element;
+    children: JSX.Element; 
 }
 const BaseModal = ({ showModal, onClose, children, purpose} : PropsI ) => {
     return (

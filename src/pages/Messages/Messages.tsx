@@ -198,13 +198,6 @@ const MessagesCards = () => {
                 </div>
             </div>
             <div className="search__select">
-                {/*<p className="search__select-text">Sort By :</p>*/}
-                {/*    <select className="search_select">*/}
-                {/*        <option value="">A - Z</option>*/}
-                {/*        <option value="">Latest Sermon</option>*/}
-                {/*        <option value="">Oldest</option>*/}
-                {/*        <option value="">Series</option>*/}
-                {/*    </select>*/}
                 <p className="search__select-text">Sort By :</p>
                 <FormControl fullWidth>
 

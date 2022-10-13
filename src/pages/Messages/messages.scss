@@ -77,10 +77,10 @@
   .search {
       display: flex;
       justify-content: space-between;
-      // width: 80%;
+      width: 70%;
       margin-top: 37px;
-      margin-right: 38px;
-      margin-left: 38px;
+      margin-right: auto;
+      margin-left: auto;
       // margin: 37px auto 0;
       padding: 50px 50px 2px 50px;
     @include respond(tab-land){
@@ -97,7 +97,7 @@
       &__input {
           //flex-basis: 60%;
           &--container {
-            width: 100%;
+            width: 60%;
           }
       }
 
@@ -107,7 +107,7 @@
 
       &__select {
           margin-left: 40px;
-          width: 60%;
+          width: 40%;
           @include respond(tab-port){
             width: 100%;
             margin-left: 0px;

@@ -77,7 +77,7 @@ const EventRegistrationForm = ({ showModal, onClose, purpose } : PropsI ) => {
           
         }
 
-        console.log('form data ', formData);
+        console.log('form data ', formData); 
     }
 
 
