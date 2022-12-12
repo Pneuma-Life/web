@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL : 'https://pneumalife.herokuapp.com/'
+    baseURL : 'https://pnenuma-life.onrender.com'
 })
